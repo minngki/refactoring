@@ -2,14 +2,11 @@ function statement(invoice, plays) {
   let totalAmount = 0;
   let volumeCredits = 0;
   let result = `청구 내역 고객명: ${invoice.customer}`;
-  const format = new Intl.NumberFormat(
-    "en-us",
-    {
-      style: "currency",
-      currency: "USD",
-      minimumFractionDigits: 2,
-    }.format
-  );
+  const format = new Intl.NumberFormat("en-us", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 2,
+  }).format;
 
   for (let perf of invoice.performances) {
     const play = plays[perf.playID];
